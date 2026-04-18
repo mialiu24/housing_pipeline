@@ -16,5 +16,5 @@ renamed as (
     where saledt is not null
       and saleprice > 0
 )
-
 select * from renamed
+
