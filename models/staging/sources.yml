@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: fairfax_raw
+    database: HOUSING_DB
+    schema: FAIRFAX_RAW
+    tables:
+      - name: FAIRFAX_SALES
+      - name: FAIRFAX_PARCELS
+      - name: FAIRFAX_ASSESSMENT
+      - name: FAIRFAX_LAND
+      - name: FAIRFAX_DWELLING
+      - name: FAIRFAX_LEGAL
+      - name: FAIRFAX_ADDITION
+      - name: FAIRFAX_MARKET_RATIO
