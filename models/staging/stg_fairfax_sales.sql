@@ -17,4 +17,8 @@ renamed as (
       and saleprice > 0
 )
 
+<<<<<<< HEAD
 select * from renamed
+=======
+select * from renamed
+>>>>>>> 7a919e050f610faa05eb75d0c3c766a5b0c8fc41

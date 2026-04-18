@@ -12,4 +12,8 @@ sources:
       - name: FAIRFAX_DWELLING
       - name: FAIRFAX_LEGAL
       - name: FAIRFAX_ADDITION
+<<<<<<< HEAD
       - name: FAIRFAX_MARKET_RATIO
+=======
+      - name: FAIRFAX_MARKET_RATIO
+>>>>>>> 7a919e050f610faa05eb75d0c3c766a5b0c8fc41
