@@ -16,9 +16,5 @@ renamed as (
     where saledt is not null
       and saleprice > 0
 )
+select * from renamed
 
-<<<<<<< HEAD
-select * from renamed
-=======
-select * from renamed
->>>>>>> 7a919e050f610faa05eb75d0c3c766a5b0c8fc41
