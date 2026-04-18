@@ -26,8 +26,4 @@ models:
       +materialized: view
     marts:
       +schema: marts
-<<<<<<< HEAD
       +materialized: table
-=======
-      +materialized: table
->>>>>>> 7a919e050f610faa05eb75d0c3c766a5b0c8fc41
