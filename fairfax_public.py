@@ -282,11 +282,20 @@ def load_incremental(records, table_name, cur, conn):
         NULL_IF = ('', 'NULL')
     """)
 
-    # 建目标表（如果不存在）
+    # 建目标表（如果不存在），整数列强制用 NUMBER(38,0) 避免小类型溢出
     cur.execute(f"""
         CREATE TABLE IF NOT EXISTS {table_name}
         USING TEMPLATE (
-            SELECT ARRAY_AGG(OBJECT_CONSTRUCT(*))
+            SELECT ARRAY_AGG(
+                OBJECT_CONSTRUCT(
+                    'COLUMN_NAME', COLUMN_NAME,
+                    'TYPE', IFF(TYPE ILIKE 'fixed%', 'NUMBER(38,0)', TYPE),
+                    'NULLABLE', NULLABLE,
+                    'EXPRESSION', EXPRESSION,
+                    'FILENAMES', FILENAMES,
+                    'ORDER_ID', ORDER_ID
+                )
+            )
             FROM TABLE(INFER_SCHEMA(
                 LOCATION    => '@{STAGE_NAME}/{stage_file}',
                 FILE_FORMAT => '{fmt}'
